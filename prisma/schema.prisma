@@ -1,0 +1,194 @@
+generator client {
+  provider     = "prisma-client"
+  output       = "../lib/generated/prisma"
+  moduleFormat = "esm"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum ContactStatus {
+  NEW
+  READ
+  REPLIED
+  ARCHIVED
+}
+
+model user {
+  id            String    @id @default(cuid())
+  name          String
+  email         String    @unique
+  emailVerified Boolean   @default(false)
+  image         String?
+  role          String    @default("user")
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  sessions      session[]
+  accounts      account[]
+}
+
+model session {
+  id        String   @id @default(cuid())
+  token     String   @unique
+  userId    String
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  ipAddress String?
+  userAgent String?
+  user      user     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model account {
+  id                    String    @id @default(cuid())
+  userId                String
+  accountId             String
+  providerId            String
+  accessToken           String?
+  refreshToken          String?
+  idToken               String?
+  accessTokenExpiresAt  DateTime?
+  refreshTokenExpiresAt DateTime?
+  scope                 String?
+  password              String?
+  createdAt             DateTime  @default(now())
+  updatedAt             DateTime  @updatedAt
+  user                  user      @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model verification {
+  id         String   @id @default(cuid())
+  identifier String
+  value      String
+  expiresAt  DateTime
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+model Project {
+  id          String          @id @default(cuid())
+  slug        String          @unique
+  title       String
+  description String
+  category    String
+  year        Int
+  role        String
+  problem     String
+  solution    String
+  challenges  String
+  result      String
+  process     Json
+  image       String?
+  liveUrl     String?
+  githubUrl   String?
+  featured    Boolean         @default(false)
+  published   Boolean         @default(true)
+  order       Int             @default(0)
+  createdAt   DateTime        @default(now())
+  updatedAt   DateTime        @updatedAt
+  features    ProjectFeature[]
+  images      ProjectImage[]
+  technologies Technology[]
+
+  @@index([published, featured])
+}
+
+model Technology {
+  id        String    @id @default(cuid())
+  name      String    @unique
+  icon      String?
+  createdAt DateTime  @default(now())
+  projects  Project[]
+}
+
+model ProjectFeature {
+  id          String  @id @default(cuid())
+  projectId   String
+  project     Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  title       String
+  description String?
+  order       Int     @default(0)
+
+  @@index([projectId])
+}
+
+model ProjectImage {
+  id        String  @id @default(cuid())
+  projectId String
+  project   Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  imageUrl  String
+  altText   String?
+  caption   String?
+  order     Int     @default(0)
+
+  @@index([projectId])
+}
+
+model Skill {
+  id       String  @id @default(cuid())
+  category String
+  name     String
+  icon     String?
+  order    Int     @default(0)
+  visible  Boolean @default(true)
+
+  @@index([category, visible])
+}
+
+model Experience {
+  id           String   @id @default(cuid())
+  title        String
+  organization String?
+  startDate    DateTime
+  endDate      DateTime?
+  description  String
+  current      Boolean  @default(false)
+  order        Int      @default(0)
+}
+
+model Education {
+  id            String   @id @default(cuid())
+  institution   String
+  qualification String
+  field         String?
+  startDate     DateTime?
+  endDate       DateTime?
+  description   String?
+  order         Int      @default(0)
+}
+
+model SocialLink {
+  id       String  @id @default(cuid())
+  platform String
+  url      String
+  icon     String?
+  visible  Boolean @default(true)
+  order    Int     @default(0)
+
+  @@index([visible, order])
+}
+
+model ContactMessage {
+  id        String        @id @default(cuid())
+  name      String
+  email     String
+  subject   String
+  message   String
+  status    ContactStatus @default(NEW)
+  createdAt DateTime      @default(now())
+
+  @@index([status, createdAt])
+}
+
+model AnalyticsEvent {
+  id        String   @id @default(cuid())
+  event     String
+  page      String?
+  projectId String?
+  sessionId String?
+  createdAt DateTime @default(now())
+
+  @@index([event, createdAt])
+  @@index([projectId])
+}
