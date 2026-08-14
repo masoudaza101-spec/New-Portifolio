@@ -14,10 +14,10 @@ export default function WhatsAppButton() {
       <span className="pointer-events-none hidden rounded-full border border-white/10 bg-card/90 px-4 py-2 text-xs font-semibold text-foreground opacity-0 shadow-xl backdrop-blur transition-opacity duration-300 group-hover:opacity-100 sm:block">
         Chat on WhatsApp
       </span>
-      <span className="relative flex size-14 items-center justify-center rounded-full bg-[#25d366] text-[#04060a] shadow-[0_8px_30px_rgba(37,211,102,0.35)] transition-transform duration-300 group-hover:scale-105">
+      <span className="relative flex size-14 items-center justify-center rounded-full bg-[var(--accent-gold)] text-[#04060a] shadow-[0_8px_30px_rgba(0,212,255,0.35)] transition-transform duration-300 group-hover:scale-105">
         <span
           aria-hidden="true"
-          className="absolute inset-0 animate-ping rounded-full bg-[#25d366] opacity-30"
+          className="absolute inset-0 animate-ping rounded-full bg-[var(--accent-gold)] opacity-30"
         />
         <WhatsAppIcon className="relative h-7 w-7" />
       </span>

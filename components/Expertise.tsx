@@ -33,9 +33,6 @@ export default function Expertise() {
     <section id="skills" className="scroll-mt-24 px-4 py-20 md:px-6">
       <div className="mx-auto max-w-7xl">
         <Reveal>
-          <p className="mb-2 font-mono text-xs tracking-wide text-muted-foreground">
-            {"// skills"}
-          </p>
           <h2 className="font-display text-2xl font-bold tracking-tight md:text-3xl">
             What I work with
           </h2>

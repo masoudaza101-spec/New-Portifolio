@@ -1,4 +1,4 @@
-import { Mail, MapPin, ArrowUpRight } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
 import Reveal from "@/components/Reveal";
 import ContactForm from "@/components/ContactForm";
 import SocialLinkIcon from "@/components/SocialLinkIcon";
@@ -18,9 +18,6 @@ export default async function Contact() {
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-5">
             <Reveal>
-              <p className="mb-2 font-mono text-xs tracking-wide text-muted-foreground">
-                {"// contact"}
-              </p>
               <h2 className="font-display text-3xl font-bold leading-[1.1] tracking-tight md:text-4xl">
                 Let&apos;s build something{" "}
                 <span className="text-gradient-luxury">useful</span>
@@ -48,10 +45,6 @@ export default async function Contact() {
                     Best for new projects
                   </span>
                 </span>
-                <ArrowUpRight
-                  className="ml-auto h-4 w-4 shrink-0 text-muted-foreground transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-[var(--accent-cyan)]"
-                  aria-hidden="true"
-                />
               </a>
 
               <a
@@ -72,10 +65,6 @@ export default async function Contact() {
                     WhatsApp — fastest reply
                   </span>
                 </span>
-                <ArrowUpRight
-                  className="ml-auto h-4 w-4 shrink-0 text-muted-foreground transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-[var(--accent-green)]"
-                  aria-hidden="true"
-                />
               </a>
 
               <div className="flex items-center gap-4 rounded-2xl border border-white/[0.07] bg-[#0a0d14] p-5">

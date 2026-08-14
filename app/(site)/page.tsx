@@ -2,16 +2,10 @@ import PageTransition from "@/components/PageTransition";
 import Hero from "@/components/Hero";
 import Marquee from "@/components/Marquee";
 import EditorialIndex from "@/components/EditorialIndex";
-import Projects from "@/components/Projects";
 import StatsSection from "@/components/StatsSection";
-import About from "@/components/About";
-import Experience from "@/components/Experience";
-import Expertise from "@/components/Expertise";
-import NavCards from "@/components/NavCards";
+import SelectedWork from "@/components/SelectedWork";
 import TestimonialsMarquee from "@/components/TestimonialsMarquee";
-import Contact from "@/components/Contact";
-
-export const dynamic = "force-dynamic";
+import ContactCta from "@/components/ContactCta";
 
 export default function HomePage() {
   return (
@@ -20,14 +14,10 @@ export default function HomePage() {
         <Hero />
         <Marquee />
         <EditorialIndex />
-        <Projects />
         <StatsSection />
-        <About />
-        <Experience />
-        <Expertise />
-        <NavCards />
+        <SelectedWork />
         <TestimonialsMarquee />
-        <Contact />
+        <ContactCta />
       </main>
     </PageTransition>
   );

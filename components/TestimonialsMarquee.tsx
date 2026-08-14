@@ -6,9 +6,6 @@ export default function TestimonialsMarquee() {
   return (
     <section className="overflow-hidden border-y border-white/[0.06] bg-[#07090f] py-16">
       <div className="mx-auto max-w-7xl px-4 md:px-6">
-        <p className="mb-2 font-mono text-xs tracking-wide text-muted-foreground">
-          {"// what people say"}
-        </p>
         <h2 className="font-display text-2xl font-bold tracking-tight md:text-3xl">
           Kind words
         </h2>

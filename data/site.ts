@@ -2,7 +2,7 @@ export const site = {
   name: "Aza Masoud",
   initials: "AZA MASOUD",
   title: "Software Developer & Information Systems",
-  tagline: "I build digital products that solve real-world problems.",
+  tagline: "I build software that solves everyday problems.",
   location: "Tanzania",
   availability: "Available for selected projects",
   email: "masoudaza101@gmail.com",
@@ -18,12 +18,12 @@ export const site = {
     "Aza Masoud is an Information Systems graduate and software developer building practical digital products and systems.",
   copyrightYear: 2026,
   nav: [
-    { label: "Home", href: "/#top" },
-    { label: "Work", href: "/#work" },
-    { label: "Experience", href: "/#experience" },
-    { label: "Skills", href: "/#skills" },
+    { label: "Home", href: "/" },
+    { label: "Work", href: "/work" },
+    { label: "Experience", href: "/experience" },
+    { label: "Skills", href: "/skills" },
     { label: "Blog", href: "/blog" },
-    { label: "Contact", href: "/#contact" },
+    { label: "Contact", href: "/contact" },
   ],
 };
 

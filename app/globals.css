@@ -21,12 +21,13 @@
   --color-muted-foreground: #94a3b8;
   --color-accent: #00b7dd;
   --color-accent-foreground: #04060a;
-  --color-accent-gold: #d4af37;
+  --color-accent-gold: #ffffff;
+  --color-accent-gold-2: #9fe8ff;
   --color-accent-cyan: #00d4ff;
-  --color-accent-violet: #7c3aed;
-  --color-accent-green: #0f8;
-  --color-accent-pink: #ff3d81;
-  --color-destructive: #d20046;
+  --color-accent-violet: #00d4ff;
+  --color-accent-green: #00d4ff;
+  --color-accent-pink: #ffffff;
+  --color-destructive: #ffffff;
   --color-destructive-foreground: #f8f8f8;
   --color-border: #1b2430;
   --color-input: #0f171f;
@@ -78,11 +79,12 @@
 }
 
 :root {
-  --accent-gold: #d4af37;
+  --accent-gold: #ffffff;
+  --accent-gold-2: #9fe8ff;
   --accent-cyan: #00d4ff;
-  --accent-violet: #7c3aed;
-  --accent-green: #0f8;
-  --accent-pink: #ff3d81;
+  --accent-violet: #00d4ff;
+  --accent-green: #00d4ff;
+  --accent-pink: #ffffff;
   color-scheme: dark;
 }
 
@@ -132,7 +134,7 @@
       135deg,
       var(--accent-gold),
       var(--accent-cyan),
-      var(--accent-violet)
+      var(--accent-gold)
     );
     background-size: 200% 200%;
     -webkit-background-clip: text;
@@ -155,7 +157,6 @@
   .text-gradient-brand {
     background: linear-gradient(
       135deg,
-      var(--accent-violet),
       var(--accent-cyan),
       var(--accent-gold)
     );
@@ -172,12 +173,12 @@
       ),
       radial-gradient(
         70% 50% at 80% 70%,
-        rgba(124, 58, 237, 0.2),
+        rgba(0, 212, 255, 0.2),
         transparent 50%
       ),
       radial-gradient(
         50% 40% at 50% 100%,
-        rgba(0, 255, 136, 0.06),
+        rgba(255, 255, 255, 0.08),
         transparent
       );
   }
@@ -188,13 +189,13 @@
   }
 
   .shadow-glow-gold {
-    box-shadow: 0 0 32px rgba(212, 175, 55, 0.38);
+    box-shadow: 0 0 32px rgba(0, 212, 255, 0.38);
   }
 
   .border-gradient-gold {
     background: linear-gradient(var(--color-card), var(--color-card))
         padding-box,
-      linear-gradient(135deg, rgba(212, 175, 55, 0.5), rgba(0, 212, 255, 0.25))
+      linear-gradient(135deg, rgba(255, 255, 255, 0.5), rgba(0, 212, 255, 0.25))
         border-box;
     border: 1px solid transparent;
   }
@@ -202,7 +203,11 @@
   .border-gradient-subtle {
     background: linear-gradient(var(--color-card), var(--color-card))
         padding-box,
-      linear-gradient(135deg, rgba(0, 212, 255, 0.25), rgba(124, 58, 237, 0.25))
+      linear-gradient(
+        135deg,
+        rgba(0, 212, 255, 0.25),
+        rgba(0, 212, 255, 0.25)
+      )
         border-box;
     border: 1px solid transparent;
   }
@@ -218,7 +223,7 @@
     height: 3px;
     background: linear-gradient(
       90deg,
-      rgba(212, 175, 55, 0.9),
+      rgba(255, 255, 255, 0.9),
       rgba(0, 212, 255, 0.5),
       transparent
     );

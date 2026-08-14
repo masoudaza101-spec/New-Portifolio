@@ -15,13 +15,10 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   const isActive = (item: { label: string; href: string }) => {
-    if (item.href === "/#top") {
+    if (item.href === "/") {
       return pathname === "/";
     }
-    if (item.href === "/blog") {
-      return pathname.startsWith("/blog");
-    }
-    return false;
+    return pathname === item.href || pathname.startsWith(`${item.href}/`);
   };
 
   useEffect(() => {
@@ -61,7 +58,7 @@ export default function Navbar() {
             className="group flex min-w-0 items-center gap-2"
             aria-label="Aza Masoud — home"
           >
-            <span className="flex size-2.5 bg-[var(--accent-gold)] shadow-[0_0_12px_rgba(212,175,55,0.8)] transition-transform duration-300 group-hover:rotate-45" aria-hidden="true" />
+            <span className="flex size-2.5 bg-[var(--accent-gold)] shadow-[0_0_12px_rgba(0,212,255,0.8)] transition-transform duration-300 group-hover:rotate-45" aria-hidden="true" />
             <span className="font-display text-xl font-bold tracking-tight">
               {site.name.split(" ")[0]}{" "}
               <span className="text-gradient-gold">{site.name.split(" ")[1]}</span>
@@ -72,7 +69,7 @@ export default function Navbar() {
             {site.nav.map((item) => {
               const active = isActive(item);
               return (
-                <a
+                <Link
                   key={item.label}
                   href={item.href}
                   aria-current={active ? "page" : undefined}
@@ -84,7 +81,7 @@ export default function Navbar() {
                   )}
                 >
                   {item.label}
-                </a>
+                </Link>
               );
             })}
           </div>

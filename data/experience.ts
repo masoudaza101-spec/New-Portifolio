@@ -17,7 +17,7 @@ export const experiences: ExperienceItem[] = [
     startDate: "2026-01-01",
     endDate: null,
     description:
-      "Building web and mobile applications for real-world business and community needs.",
+      "Building web and mobile applications for business and community needs.",
     current: true,
     order: 0,
   },

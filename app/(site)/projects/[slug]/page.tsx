@@ -3,9 +3,6 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import {
-  ArrowLeft,
-  ArrowRight,
-  ArrowUpRight,
   ExternalLink,
   Terminal,
 } from "lucide-react";
@@ -19,8 +16,6 @@ import {
   getProjects,
   getProjectSlugs,
 } from "@/lib/portfolio";
-
-export const dynamic = "force-dynamic";
 
 type ProjectPageProps = {
   params: Promise<{ slug: string }>;
@@ -78,22 +73,18 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       <main className="relative overflow-hidden pb-24 pt-12 md:pt-16">
         <div
           aria-hidden="true"
-          className="animate-orb-1 absolute -right-32 top-24 h-80 w-80 rounded-full bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.1),transparent_70%)] blur-[100px]"
+          className="animate-orb-1 absolute -right-32 top-24 h-80 w-80 rounded-full bg-[radial-gradient(circle_at_center,rgba(0,212,255,0.1),transparent_70%)] blur-[100px]"
         />
         <div
           aria-hidden="true"
-          className="animate-orb-2 absolute -left-32 bottom-40 h-80 w-80 rounded-full bg-[radial-gradient(circle_at_center,rgba(124,58,237,0.14),transparent_70%)] blur-[100px]"
+          className="animate-orb-2 absolute -left-32 bottom-40 h-80 w-80 rounded-full bg-[radial-gradient(circle_at_center,rgba(0,212,255,0.14),transparent_70%)] blur-[100px]"
         />
 
         <div className="relative mx-auto w-full max-w-[1440px] px-4 md:px-6">
           <Link
-            href="/#work"
+            href="/work"
             className="group inline-flex items-center gap-2 rounded-xl border border-white/[0.08] bg-card px-4 py-2 font-mono text-xs uppercase tracking-widest text-muted-foreground transition-colors duration-300 hover:border-[var(--accent-gold)]/40 hover:text-[var(--accent-gold)]"
           >
-            <ArrowLeft
-              className="h-4 w-4 transition-transform duration-300 group-hover:-translate-x-1"
-              aria-hidden="true"
-            />
             Back to work
           </Link>
 
@@ -275,7 +266,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                 rel="noopener noreferrer"
                 data-track="LIVE_DEMO_CLICK"
                 data-project={project.slug}
-                className="group inline-flex items-center gap-3 rounded-xl bg-gradient-to-r from-[var(--accent-gold)] to-[var(--accent-gold-2)] px-7 py-3.5 text-sm font-semibold text-[#0b0e14] shadow-glow-gold transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_40px_rgba(212,175,55,0.35)]"
+                className="group inline-flex items-center gap-3 rounded-xl bg-gradient-to-r from-[var(--accent-gold)] to-[var(--accent-gold-2)] px-7 py-3.5 text-sm font-semibold text-[#0b0e14] shadow-glow-gold transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_40px_rgba(0,212,255,0.35)]"
               >
                 Live demo
                 <ExternalLink
@@ -293,10 +284,6 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               >
                 <GithubIcon className="h-4 w-4" />
                 GitHub
-                <ArrowUpRight
-                  className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1"
-                  aria-hidden="true"
-                />
               </a>
             </div>
           </Reveal>
@@ -310,10 +297,6 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               className="group flex flex-col gap-3 rounded-2xl border border-white/[0.07] bg-card p-7 transition-colors duration-300 hover:border-white/[0.14]"
             >
               <span className="flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-muted-foreground">
-                <ArrowLeft
-                  className="h-4 w-4 transition-transform duration-300 group-hover:-translate-x-1"
-                  aria-hidden="true"
-                />
                 Previous project
               </span>
               <span className="font-display text-xl font-bold tracking-tight">
@@ -326,10 +309,6 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             >
               <span className="flex items-center justify-end gap-2 font-mono text-xs uppercase tracking-widest text-muted-foreground">
                 Next project
-                <ArrowRight
-                  className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
-                  aria-hidden="true"
-                />
               </span>
               <span className="font-display text-xl font-bold tracking-tight">
                 {next.title}

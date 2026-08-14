@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Clock } from "lucide-react";
+import { Clock } from "lucide-react";
 import PageTransition from "@/components/PageTransition";
 import Reveal from "@/components/Reveal";
 import { site } from "@/data/site";
@@ -43,19 +43,16 @@ export default function BlogPage() {
       <main className="relative overflow-hidden px-4 pb-24 pt-16 md:px-6 md:pt-24">
         <div
           aria-hidden="true"
-          className="animate-orb-1 absolute -left-24 top-10 h-72 w-72 rounded-full bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.12),transparent_70%)] blur-[100px]"
+          className="animate-orb-1 absolute -left-24 top-10 h-72 w-72 rounded-full bg-[radial-gradient(circle_at_center,rgba(0,212,255,0.12),transparent_70%)] blur-[100px]"
         />
         <div
           aria-hidden="true"
-          className="animate-orb-2 absolute -right-24 bottom-10 h-72 w-72 rounded-full bg-[radial-gradient(circle_at_center,rgba(124,58,237,0.16),transparent_70%)] blur-[100px]"
+          className="animate-orb-2 absolute -right-24 bottom-10 h-72 w-72 rounded-full bg-[radial-gradient(circle_at_center,rgba(0,212,255,0.16),transparent_70%)] blur-[100px]"
         />
 
         <div className="relative mx-auto w-full max-w-4xl">
           <Reveal>
-            <p className="font-mono text-xs tracking-wide text-muted-foreground">
-              {"// blog"}
-            </p>
-            <h1 className="mt-5 font-display text-4xl font-bold leading-[1.05] tracking-tight md:text-6xl">
+            <h1 className="font-display text-4xl font-bold leading-[1.05] tracking-tight md:text-6xl">
               Notes &amp; <span className="text-gradient-luxury">thinking</span>
             </h1>
             <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
@@ -100,10 +97,6 @@ export default function BlogPage() {
                   </p>
                   <span className="mt-1 inline-flex w-fit items-center gap-2 font-mono text-[11px] uppercase tracking-[0.2em] text-[var(--accent-gold)]">
                     Read soon
-                    <ArrowRight
-                      className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1"
-                      aria-hidden="true"
-                    />
                   </span>
                 </article>
               </Reveal>
@@ -114,7 +107,7 @@ export default function BlogPage() {
             <p className="mt-12 text-sm text-muted-foreground">
               Have something in mind?{" "}
               <Link
-                href="/#contact"
+                href="/contact"
                 className="font-semibold text-[var(--accent-gold)] underline decoration-[var(--accent-gold)]/40 underline-offset-4 transition-colors hover:text-[var(--accent-gold-2)]"
               >
                 Let&apos;s talk

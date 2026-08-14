@@ -26,9 +26,6 @@ export default async function Experience() {
     >
       <div className="mx-auto max-w-7xl">
         <Reveal>
-          <p className="mb-2 font-mono text-xs tracking-wide text-muted-foreground">
-            {"// experience"}
-          </p>
           <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
             <h2 className="font-display text-2xl font-bold tracking-tight md:text-3xl">
               Experience

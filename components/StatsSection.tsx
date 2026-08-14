@@ -51,15 +51,12 @@ export default async function StatsSection() {
     <section className="relative overflow-hidden border-b border-white/[0.06] bg-muted/10">
       <div className="mx-auto max-w-7xl px-4 py-16 md:px-6">
         <Reveal>
-          <p className="mb-2 font-mono text-xs tracking-wide text-muted-foreground">
-            {"// impact metrics"}
-          </p>
           <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
             <h2 className="font-display text-2xl font-bold tracking-tight md:text-3xl">
               Impact at a glance
             </h2>
             <p className="max-w-md text-sm text-muted-foreground">
-              Quantifiable outcomes from building digital products across
+              Real results from digital products built across
               Tanzania and East Africa.
             </p>
           </div>

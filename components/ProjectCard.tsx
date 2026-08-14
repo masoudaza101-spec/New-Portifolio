@@ -30,7 +30,7 @@ export default function ProjectCard({
       href={`/projects/${project.slug}`}
       className="group block h-full focus-visible:outline-none"
     >
-        <article className="flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card/60 transition-[border-color,box-shadow,transform] duration-300 hover:-translate-y-1 hover:border-[var(--accent-gold)]/30 hover:shadow-[0_8px_32px_rgba(212,175,55,0.08)]">
+        <article className="flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card/60 transition-[border-color,box-shadow,transform] duration-300 hover:-translate-y-1 hover:border-[var(--accent-gold)]/30 hover:shadow-[0_8px_32px_rgba(0,212,255,0.08)]">
           <div className="relative aspect-[16/9] overflow-hidden bg-muted/30">
             <Image
               src={project.image}

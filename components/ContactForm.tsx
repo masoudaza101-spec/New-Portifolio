@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { AlertCircle, CheckCircle2, Send } from "lucide-react";
+import { CheckCircle2, Send } from "lucide-react";
 import { site } from "@/data/site";
 import { emailPattern } from "@/lib/utils";
 
@@ -45,9 +45,7 @@ function validate(values: Fields): Errors {
 export default function ContactForm() {
   const [values, setValues] = useState<Fields>(initialValues);
   const [errors, setErrors] = useState<Errors>({});
-  const [sending, setSending] = useState(false);
   const [sent, setSent] = useState(false);
-  const [submitError, setSubmitError] = useState<string | null>(null);
 
   function handleChange(field: keyof Fields) {
     return (
@@ -60,50 +58,22 @@ export default function ContactForm() {
     };
   }
 
-  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const nextErrors = validate(values);
     setErrors(nextErrors);
-    setSubmitError(null);
 
     if (Object.keys(nextErrors).length > 0) {
       return;
     }
 
-    setSending(true);
-
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify({ ...values, website: "" }),
-      });
-
-      if (!response.ok) {
-        const body = await response.json().catch(() => null);
-        throw new Error(
-          body?.error?.message ?? "Something went wrong. Please try again."
-        );
-      }
-
-      setValues(initialValues);
-      setSent(true);
-    } catch (error) {
-      if (error instanceof TypeError) {
-        const subject = encodeURIComponent(`[Portfolio] ${values.subject}`);
-        const body = encodeURIComponent(
-          `Name: ${values.name}\nEmail: ${values.email}\n\n${values.message}`
-        );
-        window.location.href = `mailto:${site.email}?subject=${subject}&body=${body}`;
-        setSent(true);
-        return;
-      }
-      setSubmitError(
-        error instanceof Error ? error.message : "Something went wrong."
-      );
-    } finally {
-      setSending(false);
-    }
+    const subject = encodeURIComponent(`[Portfolio] ${values.subject}`);
+    const body = encodeURIComponent(
+      `Name: ${values.name}\nEmail: ${values.email}\n\n${values.message}`
+    );
+    window.location.href = `mailto:${site.email}?subject=${subject}&body=${body}`;
+    setValues(initialValues);
+    setSent(true);
   }
 
   return (
@@ -165,24 +135,13 @@ export default function ContactForm() {
         </p>
       ) : null}
 
-      {submitError ? (
-        <p
-          role="alert"
-          className="flex items-center gap-3 rounded-xl border border-[var(--accent-pink)]/40 bg-[var(--accent-pink)]/10 px-4 py-3 text-sm font-medium text-[var(--accent-pink)]"
-        >
-          <AlertCircle className="h-5 w-5 shrink-0" aria-hidden="true" />
-          {submitError}
-        </p>
-      ) : null}
-
       <div>
         <button
           type="submit"
           data-track="CONTACT_CLICK"
-          disabled={sending}
-          className="group inline-flex w-full items-center justify-center gap-3 rounded-xl bg-gradient-to-r from-[var(--accent-gold)] to-[var(--accent-gold-2)] px-8 py-3.5 text-sm font-semibold text-[#0b0e14] shadow-glow-gold transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_40px_rgba(212,175,55,0.35)] disabled:cursor-not-allowed disabled:opacity-60 sm:w-fit"
+          className="group inline-flex w-full items-center justify-center gap-3 rounded-xl bg-gradient-to-r from-[var(--accent-gold)] to-[var(--accent-gold-2)] px-8 py-3.5 text-sm font-semibold text-[#0b0e14] shadow-glow-gold transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_40px_rgba(0,212,255,0.35)] sm:w-fit"
         >
-          {sending ? "Sending…" : "Send message"}
+          Send message
           <Send
             className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
             aria-hidden="true"

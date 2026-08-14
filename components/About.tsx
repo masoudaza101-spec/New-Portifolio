@@ -7,7 +7,7 @@ import { site } from "@/data/site";
 
 const paragraphs = [
   "I'm Aza Masoud, an Information Systems graduate and software developer based in Tanzania.",
-  "I enjoy turning ideas and real-world problems into practical digital products.",
+  "I enjoy turning ideas and everyday problems into practical software.",
   "My work sits between technology, business and user experience.",
 ];
 
@@ -20,9 +20,6 @@ export default async function About() {
       <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-14 lg:grid-cols-12 lg:gap-12">
         <div className="lg:col-span-5">
           <Reveal>
-            <p className="mb-2 font-mono text-xs tracking-wide text-muted-foreground">
-              {"// about"}
-            </p>
             <h2 className="font-display text-3xl font-bold leading-[1.1] tracking-tight md:text-4xl">
               A little
               <br />

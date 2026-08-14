@@ -1,7 +1,6 @@
 import ScrollProgress from "@/components/ScrollProgress";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import Analytics from "@/components/Analytics";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
 export default function SiteLayout({ children }: { children: React.ReactNode }) {
@@ -12,7 +11,6 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
       <div id="top" className="flex-1">{children}</div>
       <Footer />
       <WhatsAppButton />
-      <Analytics />
     </>
   );
 }

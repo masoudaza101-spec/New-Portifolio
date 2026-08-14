@@ -1,12 +1,9 @@
 import Link from "next/link";
 import {
-  ArrowRight,
   CheckCircle2,
-  ChevronDown,
   FolderGit2,
   Mail,
   MapPin,
-  Play,
 } from "lucide-react";
 import Reveal from "@/components/Reveal";
 import AnimatedBackground from "@/components/AnimatedBackground";
@@ -17,7 +14,7 @@ import { site } from "@/data/site";
 import { getProjects, getSocialLinks } from "@/lib/portfolio";
 
 const paragraph =
-  "Full-stack developer and Information Systems graduate building web and mobile applications that solve real-world problems across Tanzania and beyond.";
+  "Full-stack developer and Information Systems graduate building web and mobile applications that solve everyday problems across Tanzania and beyond.";
 
 const badgeClass =
   "rounded-full border px-3 py-1 font-mono text-xs font-semibold uppercase tracking-wider";
@@ -67,11 +64,7 @@ export default async function Hero() {
                 <span className="text-[var(--accent-gold)]">.</span>
               </h1>
 
-              <div className="mt-8 flex flex-wrap items-baseline gap-x-3 gap-y-2 font-mono text-sm md:text-base">
-                <span className="text-muted-foreground">$ whoami</span>
-                <span aria-hidden="true" className="text-[var(--accent-gold)]">
-                  →
-                </span>
+              <div className="mt-8 font-mono text-sm md:text-base">
                 <Typewriter />
               </div>
 
@@ -124,18 +117,17 @@ export default async function Hero() {
 
               <div className="mt-8 flex flex-wrap items-center gap-4">
                 <Link
-                  href="/#work"
-                  className="group inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-[var(--accent-gold)] to-[var(--accent-gold-2)] px-6 py-3 text-sm font-semibold text-[#0b0e14] shadow-glow-gold transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_40px_rgba(212,175,55,0.35)]"
+                  href="/work"
+                  className="group inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-[var(--accent-gold)] to-[var(--accent-gold-2)] px-6 py-3 text-sm font-semibold text-[#0b0e14] shadow-glow-gold transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_40px_rgba(0,212,255,0.35)]"
                 >
                   View My Work
-                  <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true" />
                 </Link>
                 <Link
-                  href="/#reel"
+                  href="/contact"
                   className="group inline-flex items-center gap-2 rounded-xl border border-white/[0.12] bg-card px-6 py-3 text-sm font-semibold text-foreground transition-all duration-300 hover:border-[var(--accent-gold)]/40 hover:text-[var(--accent-gold)]"
                 >
-                  <Play className="h-4 w-4 transition-transform duration-300 group-hover:scale-110" aria-hidden="true" />
-                  View Reel
+                  <Mail className="h-4 w-4 transition-transform duration-300 group-hover:scale-110" aria-hidden="true" />
+                  Get in Touch
                 </Link>
               </div>
 
@@ -176,15 +168,6 @@ export default async function Hero() {
             <TerminalCard projectsCount={projects.length} />
           </Reveal>
         </div>
-      </div>
-
-      {/* Scroll prompt */}
-      <div
-        aria-hidden="true"
-        className="absolute bottom-5 left-1/2 z-10 hidden -translate-x-1/2 items-center gap-2 font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground md:flex"
-      >
-        <span>$ cd ./work</span>
-        <ChevronDown className="h-4 w-4 animate-bounce text-[var(--accent-gold)]" />
       </div>
     </section>
   );

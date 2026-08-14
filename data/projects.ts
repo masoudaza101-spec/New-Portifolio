@@ -39,11 +39,11 @@ export const projects: Project[] = [
     problem:
       "Local businesses struggled to stay connected with their customers. Existing communication tools were either too complex, built for large enterprises, or lacked the local integration needed for regional telecom providers. There was no simple way to manage customer records and send targeted SMS campaigns.",
     solution:
-      "KEMI-FAIBA is a streamlined web platform for managing customer records and running bulk SMS campaigns. A fast Next.js frontend sits on a reliable backend, letting businesses import contacts, segment them, schedule messages and track delivery — all from one clean interface.",
+      "KEMI-FAIBA is a straightforward web platform for managing customer records and running bulk SMS campaigns. A fast Next.js frontend sits on a reliable backend, letting businesses import contacts, segment them, schedule messages and track delivery — all in one place.",
     challenges:
-      "Integrating with local SMS gateways meant handling inconsistent delivery reports and building robust retry logic. Storing and querying large contact lists also required careful data modelling with proper indexing and pagination.",
+      "Integrating with local SMS gateways meant handling inconsistent delivery reports and building retry logic that worked reliably. Storing and querying large contact lists also needed careful data modelling with proper indexing and pagination.",
     result:
-      "A production-ready platform that gives small businesses enterprise-level communication tools without the complexity or cost of enterprise software.",
+      "A working platform that gives small businesses the communication tools they need, without the cost or complexity of enterprise software.",
     process: [
       "Requirement gathering and workflow mapping",
       "Designing the data model with Prisma and TiDB",
@@ -59,7 +59,7 @@ export const projects: Project[] = [
     id: "02",
     slug: "skymap",
     title: "SKYMAP",
-    description: "Real-Time Flight Tracking & Travel Information Platform",
+    description: "Live Flight Tracking & Travel Information Platform",
     category: "Web Application",
     year: "2026",
     role: "Full-Stack Developer",
@@ -75,11 +75,11 @@ export const projects: Project[] = [
     problem:
       "Travellers and aviation enthusiasts lacked a simple, fast way to see live flight information and explore routes. Existing tools were slow, cluttered with ads, or buried key information behind complex interfaces.",
     solution:
-      "SKYMAP is a clean flight tracking and travel information platform. An interactive map shows flights in real time, while smart search lets users find flights, routes and airport details in seconds — on any device.",
+      "SKYMAP is a simple flight tracking and travel information platform. An interactive map shows live flights, while search lets users find flights, routes and airport details quickly — on any device.",
     challenges:
       "Handling high-frequency live updates without jank required efficient client-side state management and careful map rendering. Normalising data from multiple aviation sources into one fast search index was also demanding.",
     result:
-      "A fast, intuitive platform that makes live flight information accessible to travellers and enthusiasts anywhere.",
+      "A fast, easy-to-use platform that makes live flight information genuinely useful for travellers and enthusiasts.",
     process: [
       "Researching aviation data sources and APIs",
       "Designing the map and search experience",
@@ -113,9 +113,9 @@ export const projects: Project[] = [
     solution:
       "SALASJUICE is an ordering platform with a clean product catalogue, recurring delivery plans and SMS order confirmations. Orders are confirmed over SMS, so every customer is reached wherever they are.",
     challenges:
-      "Making the ordering flow work end-to-end over SMS meant handling confirmation replies and keeping the recurring delivery schedule reliable, all while keeping the interface simple.",
+      "Making the whole ordering flow work over SMS meant handling confirmation replies and keeping the recurring delivery schedule reliable, all without complicating the interface.",
     result:
-      "A platform that modernizes ordering while keeping the business approachable for every customer, tech-savvy or not.",
+      "A platform that brings ordering up to date while keeping the business approachable for every customer, tech-savvy or not.",
     process: [
       "Understanding the ordering and delivery flow",
       "Designing the catalogue and order model",
@@ -149,7 +149,7 @@ export const projects: Project[] = [
     solution:
       "DOCTOR PORTAL is an online booking and clinic management platform. Patients can find a doctor, book an appointment and manage their records online, while clinic staff get a dashboard that keeps the whole schedule organised.",
     challenges:
-      "Balancing patient privacy with a smooth booking flow meant designing careful access control and data handling. Keeping appointment availability accurate in real time across multiple doctors was also challenging.",
+      "Balancing patient privacy with an easy booking flow meant designing careful access control and data handling. Keeping appointment availability up to date across multiple doctors was also challenging.",
     result:
       "A portal that reduces queues, cuts missed appointments and gives clinics a clear, organized way to run their daily operations.",
     process: [

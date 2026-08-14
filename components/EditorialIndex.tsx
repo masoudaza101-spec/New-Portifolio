@@ -1,13 +1,12 @@
 import Link from "next/link";
-import { ArrowDown } from "lucide-react";
 import Reveal from "@/components/Reveal";
 import { site } from "@/data/site";
 
 const indexItems = [
-  { id: "01", label: "Selected Work", href: "/#work", note: "Featured projects" },
-  { id: "02", label: "Experience", href: "/#experience", note: "Where I've built" },
-  { id: "03", label: "Expertise", href: "/#expertise", note: "What I do best" },
-  { id: "04", label: "Contact", href: "/#contact", note: "Start a project" },
+  { id: "01", label: "Selected Work", href: "/work", note: "Featured projects" },
+  { id: "02", label: "Experience", href: "/experience", note: "Where I've built" },
+  { id: "03", label: "Expertise", href: "/skills", note: "What I do best" },
+  { id: "04", label: "Contact", href: "/contact", note: "Start a project" },
 ];
 
 export default function EditorialIndex() {
@@ -31,20 +30,16 @@ export default function EditorialIndex() {
 
         <Reveal delay={0.1} className="md:col-span-4 md:col-start-9">
           <p className="border-t border-line pt-5 text-body-lg text-muted">
-            Web and mobile products designed, built and shipped end-to-end —
-            for businesses and people across Tanzania and East Africa.
+            Web and mobile products designed, built and shipped — for
+            businesses and people across Tanzania and East Africa.
           </p>
-          <a
-            href="#work"
+          <Link
+            href="/work"
             data-track="WORK_CLICK"
             className="group mt-8 inline-flex items-center gap-3 text-caps uppercase tracking-wide text-foreground transition-colors duration-300 hover:text-[var(--accent-gold)]"
           >
             View selected work
-            <ArrowDown
-              className="h-4 w-4 transition-transform duration-300 group-hover:translate-y-1"
-              aria-hidden="true"
-            />
-          </a>
+          </Link>
         </Reveal>
       </div>
 
@@ -67,10 +62,6 @@ export default function EditorialIndex() {
                   <span className="font-display text-headline uppercase tracking-tight transition-colors duration-300 group-hover:text-[var(--accent-gold)]">
                     {item.label}
                   </span>
-                  <ArrowDown
-                    className="h-4 w-4 shrink-0 -rotate-45 text-muted transition-all duration-300 group-hover:text-[var(--accent-gold)] group-hover:rotate-0"
-                    aria-hidden="true"
-                  />
                 </span>
                 <span className="text-sm text-muted">{item.note}</span>
               </Link>

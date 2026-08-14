@@ -20,7 +20,7 @@ const SCRIPT: ScriptLine[] = [
   { text: "aza@masoud — Full-Stack Developer", className: "text-foreground" },
   { prompt: true, command: "cat bio.txt" },
   { text: "Information Systems graduate building", indent: true },
-  { text: "web + mobile products end-to-end.", indent: true },
+  { text: "web + mobile products, start to finish.", indent: true },
   { prompt: true, command: "ls ./stack" },
   { text: "Next.js  React  TypeScript  Node  Android", indent: true, className: "text-[var(--accent-cyan)]" },
   { prompt: true, command: "./availability --status" },
@@ -100,7 +100,9 @@ export default function TerminalCard({ projectsCount }: { projectsCount: number 
         className={cn("flex items-baseline gap-2 font-mono text-[13px] leading-7 md:text-sm", line.indent && "pl-6")}
       >
         {line.prompt ? (
-          <span className="shrink-0 text-[var(--accent-gold)]">$</span>
+          <span className="shrink-0 text-muted-foreground" aria-hidden="true">
+            ›
+          </span>
         ) : (
           <span className="shrink-0 text-muted-foreground">└</span>
         )}
@@ -120,14 +122,14 @@ export default function TerminalCard({ projectsCount }: { projectsCount: number 
     <div className="relative">
       <div
         aria-hidden="true"
-        className="absolute -inset-5 rounded-[2rem] bg-[radial-gradient(circle_at_70%_20%,rgba(212,175,55,0.12),transparent_65%)] blur-2xl"
+        className="absolute -inset-5 rounded-[2rem] bg-[radial-gradient(circle_at_70%_20%,rgba(0,212,255,0.12),transparent_65%)] blur-2xl"
       />
       <div className="relative overflow-hidden rounded-2xl border border-white/[0.1] bg-card/80 shadow-[0_25px_80px_rgba(0,0,0,0.5)] backdrop-blur-xl">
         <div className="flex items-center justify-between border-b border-white/[0.06] px-4 py-3">
           <div className="flex items-center gap-2" aria-hidden="true">
-            <span className="size-3 rounded-full bg-[#ff5f57]" />
-            <span className="size-3 rounded-full bg-[#febc2e]" />
-            <span className="size-3 rounded-full bg-[#28c840]" />
+            <span className="size-3 rounded-full bg-[var(--accent-gold)]" />
+            <span className="size-3 rounded-full bg-[var(--accent-cyan)]" />
+            <span className="size-3 rounded-full bg-white/20" />
           </div>
           <span className="font-mono text-xs text-muted-foreground">
             aza@masoud — ~/portfolio
@@ -146,7 +148,6 @@ export default function TerminalCard({ projectsCount }: { projectsCount: number 
               animate={{ opacity: 1 }}
               className="flex items-center gap-2 font-mono text-[13px] text-muted-foreground md:text-sm"
             >
-              <span className="text-[var(--accent-gold)]">$</span>
               <span className="text-[var(--accent-gold)]">
                 {projectsCount} projects in repo
               </span>

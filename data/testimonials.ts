@@ -13,7 +13,7 @@ export const testimonials = [
     name: "Community Health Lead",
     role: "CHILDCARE",
     initials: "CH",
-    accent: "#d4af37",
+    accent: "#ffffff",
   },
   {
     quote:
@@ -21,6 +21,6 @@ export const testimonials = [
     name: "Client",
     role: "Digital Product",
     initials: "CL",
-    accent: "#7c3aed",
+    accent: "#00d4ff",
   },
 ];

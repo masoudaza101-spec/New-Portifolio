@@ -1,16 +1,16 @@
-import { ArrowUp, Mail, MapPin } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
 import SocialLinkIcon from "@/components/SocialLinkIcon";
 import { WhatsAppIcon } from "@/components/BrandIcons";
 import { site } from "@/data/site";
 import { getSocialLinks } from "@/lib/portfolio";
 
 const quickLinks = [
-  { label: "Home", href: "/#top" },
-  { label: "Work", href: "/#work" },
-  { label: "Experience", href: "/#experience" },
-  { label: "Skills", href: "/#skills" },
+  { label: "Home", href: "/" },
+  { label: "Work", href: "/work" },
+  { label: "Experience", href: "/experience" },
+  { label: "Skills", href: "/skills" },
   { label: "Blog", href: "/blog" },
-  { label: "Contact", href: "/#contact" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export default async function Footer() {
@@ -132,10 +132,6 @@ export default async function Footer() {
             className="group inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-muted-foreground transition-colors duration-300 hover:text-[var(--accent-gold)]"
           >
             Back to top
-            <ArrowUp
-              className="h-3.5 w-3.5 transition-transform duration-300 group-hover:-translate-y-1"
-              aria-hidden="true"
-            />
           </a>
         </div>
       </div>
