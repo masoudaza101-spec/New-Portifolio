@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import HeroClock from "@/components/HeroClock";
 import { cn } from "@/lib/utils";
@@ -10,7 +9,6 @@ type ScriptLine = {
   prompt?: boolean;
   command?: string;
   text?: string;
-  image?: boolean;
   indent?: boolean;
   className?: string;
 };
@@ -25,8 +23,6 @@ const SCRIPT: ScriptLine[] = [
   { text: "Next.js  React  TypeScript  Node  Android", indent: true, className: "text-[var(--accent-cyan)]" },
   { prompt: true, command: "./availability --status" },
   { text: "OK — open to selected projects", indent: true, className: "text-[var(--accent-green)]" },
-  { prompt: true, command: "open avatar.jpg" },
-  { image: true },
 ];
 
 const CHAR_DELAY = 42;
@@ -69,27 +65,6 @@ export default function TerminalCard({ projectsCount }: { projectsCount: number 
   const renderLine = (line: ScriptLine, index: number) => {
     const isTyping = index === visibleLines;
     const isCommand = Boolean(line.command);
-
-    if (line.image) {
-      return (
-        <motion.div
-          key={`line-${index}`}
-          initial={{ opacity: 0, scale: 0.96 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.35 }}
-          className="pt-2"
-        >
-          <Image
-            src="/images/profile.jpg"
-            alt="Professional portrait of Aza Masoud"
-            width={288}
-            height={384}
-            priority
-            className="mx-auto aspect-[3/4] w-40 rounded-xl border border-white/10 object-cover object-top shadow-glow-gold"
-          />
-        </motion.div>
-      );
-    }
 
     return (
       <motion.div

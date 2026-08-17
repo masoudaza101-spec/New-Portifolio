@@ -27,6 +27,23 @@ export default async function About() {
             </h2>
           </Reveal>
 
+          <Reveal delay={0.1} className="mt-10">
+            <div className="group relative aspect-[3/4] w-full overflow-hidden rounded-3xl border border-white/[0.07] bg-card">
+              <Image
+                src="/images/profile.jpg"
+                alt="Portrait of Aza Masoud"
+                fill
+                sizes="(max-width: 1024px) 100vw, 40vw"
+                placeholder="blur"
+                blurDataURL={blurDataUrl}
+                className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+              />
+              <div
+                aria-hidden="true"
+                className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"
+              />
+            </div>
+          </Reveal>
         </div>
 
         <div className="flex flex-col justify-center lg:col-span-6 lg:col-start-7">
@@ -57,24 +74,7 @@ export default async function About() {
                   <p className="font-mono text-xs uppercase tracking-wide text-muted-foreground">
                     Education
                   </p>
-          <Reveal delay={0.1} className="mt-10">
-            <div className="group relative aspect-[3/4] w-full overflow-hidden rounded-3xl border border-white/[0.07] bg-card">
-              <Image
-                src="/images/about.jpg"
-                alt="Portrait of Aza Masoud"
-                fill
-                sizes="(max-width: 1024px) 100vw, 40vw"
-                placeholder="blur"
-                blurDataURL={blurDataUrl}
-                className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
-              />
-              <div
-                aria-hidden="true"
-                className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"
-              />
-            </div>
-          </Reveal>
-        </div>
+                </div>
                 <h3 className="mt-4 font-display text-xl font-bold tracking-tight">
                   {first.qualification}
                 </h3>
