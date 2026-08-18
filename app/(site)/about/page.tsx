@@ -7,6 +7,21 @@ import { site } from "@/data/site";
 export const metadata: Metadata = {
   title: "About",
   description: `Story, values, and how ${site.name} works.`,
+  alternates: {
+    canonical: `${site.url}/about`,
+  },
+  openGraph: {
+    title: `About — ${site.name}`,
+    description: `Story, values, and how ${site.name} works.`,
+    url: `${site.url}/about`,
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `About — ${site.name}`,
+    description: `Story, values, and how ${site.name} works.`,
+    images: ["/opengraph-image"],
+  },
 };
 
 export default function AboutPage() {

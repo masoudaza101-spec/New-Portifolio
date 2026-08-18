@@ -28,6 +28,25 @@ export const metadata: Metadata = {
     template: `%s — ${site.name}`,
   },
   description: site.metaDescription,
+  keywords: site.keywords,
+  authors: [{ name: site.name }],
+  creator: site.name,
+  publisher: site.name,
+  formatDetection: {
+    telephone: true,
+    email: true,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -35,14 +54,28 @@ export const metadata: Metadata = {
     siteName: site.name,
     title: site.title,
     description: site.metaDescription,
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: `${site.name} — Information Systems & Web Developer`,
+        type: "image/png",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: site.title,
     description: site.metaDescription,
+    images: ["/opengraph-image"],
   },
   icons: {
     icon: "/icon.svg",
+    apple: "/apple-icon",
+  },
+  alternates: {
+    canonical: site.url,
   },
 };
 

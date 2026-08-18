@@ -18,10 +18,10 @@ export default async function Contact() {
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-5">
             <Reveal>
-              <h2 className="font-display text-3xl font-bold leading-[1.1] tracking-tight md:text-4xl">
+              <h1 className="font-display text-3xl font-bold leading-[1.1] tracking-tight md:text-4xl">
                 Let&apos;s build something{" "}
                 <span className="text-gradient-luxury">useful</span>
-              </h2>
+              </h1>
               <p className="mt-4 max-w-md text-sm leading-relaxed text-muted-foreground md:text-base">
                 Have a project in mind? Tell me about it and I&apos;ll get back
                 to you soon.

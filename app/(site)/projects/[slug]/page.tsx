@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 import PageTransition from "@/components/PageTransition";
 import Reveal from "@/components/Reveal";
+import JsonLd from "@/components/JsonLd";
 import { GithubIcon } from "@/components/BrandIcons";
 import { site } from "@/data/site";
 import { blurDataUrl } from "@/lib/utils";
@@ -39,11 +40,28 @@ export async function generateMetadata({
   return {
     title: project.title,
     description: project.description,
+    alternates: {
+      canonical: `${site.url}/projects/${project.slug}`,
+    },
     openGraph: {
       title: `${project.title} — ${site.name}`,
       description: project.description,
       url: `${site.url}/projects/${project.slug}`,
-      type: "website",
+      type: "article",
+      images: [
+        {
+          url: project.image,
+          width: 1200,
+          height: 630,
+          alt: `${project.title} — ${project.description}`,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${project.title} — ${site.name}`,
+      description: project.description,
+      images: [project.image],
     },
   };
 }
@@ -68,8 +86,52 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
     { id: "result", title: "Result", body: project.result },
   ];
 
+  const projectSchema = {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    name: project.title,
+    description: project.description,
+    url: `${site.url}/projects/${project.slug}`,
+    image: project.image,
+    author: {
+      "@type": "Person",
+      name: site.name,
+      url: site.url,
+    },
+    techStack: project.technologies,
+    dateCreated: project.year,
+    genre: project.category,
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: site.url,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Work",
+        item: `${site.url}/work`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: project.title,
+        item: `${site.url}/projects/${project.slug}`,
+      },
+    ],
+  };
+
   return (
     <PageTransition>
+      <JsonLd data={projectSchema} />
+      <JsonLd data={breadcrumbSchema} />
       <main className="relative overflow-hidden pb-24 pt-12 md:pt-16">
         <div
           aria-hidden="true"

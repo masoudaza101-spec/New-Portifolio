@@ -20,11 +20,11 @@ export default async function About() {
       <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-14 lg:grid-cols-12 lg:gap-12">
         <div className="lg:col-span-5">
           <Reveal>
-            <h2 className="font-display text-3xl font-bold leading-[1.1] tracking-tight md:text-4xl">
+            <h1 className="font-display text-3xl font-bold leading-[1.1] tracking-tight md:text-4xl">
               A little
               <br />
               <span className="text-gradient-gold">about me</span>
-            </h2>
+            </h1>
           </Reveal>
 
           <Reveal delay={0.1} className="mt-10">

@@ -33,9 +33,9 @@ export default function Expertise() {
     <section id="skills" className="scroll-mt-24 px-4 py-20 md:px-6">
       <div className="mx-auto max-w-7xl">
         <Reveal>
-          <h2 className="font-display text-2xl font-bold tracking-tight md:text-3xl">
+          <h1 className="font-display text-2xl font-bold tracking-tight md:text-3xl">
             What I work with
-          </h2>
+          </h1>
         </Reveal>
 
         <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">

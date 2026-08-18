@@ -1,7 +1,7 @@
 export const site = {
   name: "Aza Masoud",
   initials: "AZA MASOUD",
-  title: "Software Developer & Information Systems",
+  title: "Aza Masoud | Information Systems & Web Developer",
   tagline: "I build software that solves everyday problems.",
   location: "Tanzania",
   availability: "Available for selected projects",
@@ -13,9 +13,21 @@ export const site = {
   githubLabel: "github.com/azamasoud",
   linkedin: "https://www.linkedin.com/in/azamasoud",
   linkedinLabel: "linkedin.com/in/azamasoud",
-  url: "https://azamasoud.com",
+  url: "https://azamasoud.pharmpay.co.tz",
   metaDescription:
-    "Aza Masoud is an Information Systems graduate and software developer building practical digital products and systems.",
+    "Aza Masoud is an Information Systems and web developer from Tanzania building modern web applications, digital systems, and technology solutions.",
+  keywords: [
+    "Aza Masoud",
+    "Aza Masoud Tanzania",
+    "web developer Tanzania",
+    "software developer Tanzania",
+    "full stack developer Tanzania",
+    "Information Systems developer",
+    "Next.js developer",
+    "React developer",
+    "web development Tanzania",
+    "digital solutions Tanzania",
+  ],
   copyrightYear: 2026,
   nav: [
     { label: "Home", href: "/" },

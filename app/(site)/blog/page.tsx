@@ -8,6 +8,21 @@ import { site } from "@/data/site";
 export const metadata: Metadata = {
   title: "Blog",
   description: `Notes on software development, building products and running an independent engineering practice — by ${site.name}.`,
+  alternates: {
+    canonical: `${site.url}/blog`,
+  },
+  openGraph: {
+    title: `Blog — ${site.name}`,
+    description: `Notes on software development, building products and running an independent engineering practice — by ${site.name}.`,
+    url: `${site.url}/blog`,
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `Blog — ${site.name}`,
+    description: `Notes on software development, building products and running an independent engineering practice — by ${site.name}.`,
+    images: ["/opengraph-image"],
+  },
 };
 
 const posts = [

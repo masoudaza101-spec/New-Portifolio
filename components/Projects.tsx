@@ -22,10 +22,10 @@ export default async function Projects() {
         <Reveal>
           <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
             <div>
-              <h2 className="font-display text-2xl font-bold tracking-tight md:text-3xl">
+              <h1 className="font-display text-2xl font-bold tracking-tight md:text-3xl">
                 Featured{" "}
                 <span className="text-gradient-luxury">projects</span>
-              </h2>
+              </h1>
               <p className="mt-2 max-w-md text-sm text-muted-foreground">
                 A collection of web and mobile products built for everyday
                 needs.
