@@ -60,6 +60,9 @@ export default function ProjectCard({
                 <span className="text-muted-foreground/50">
                   {project.year}
                 </span>
+                <span className="hidden text-muted-foreground/50 sm:inline">
+                  {project.role}
+                </span>
               </p>
               <span className="flex size-6 items-center justify-center rounded-lg border border-border text-muted-foreground transition-colors duration-300 group-hover:border-[var(--accent-gold)]/40 group-hover:text-[var(--accent-gold)]">
                 <ExternalLink className="h-3 w-3" aria-hidden="true" />
@@ -72,6 +75,22 @@ export default function ProjectCard({
             <p className="mt-1 line-clamp-2 text-xs leading-relaxed text-muted-foreground">
               {project.description}
             </p>
+
+            <ul className="mt-3 space-y-1.5">
+              {project.highlights.slice(0, 2).map((highlight) => (
+                <li
+                  key={highlight}
+                  className="flex items-start gap-2 text-[11px] leading-relaxed text-muted-foreground/90"
+                >
+                  <span
+                    aria-hidden="true"
+                    className="mt-[5px] size-1 shrink-0 rounded-full"
+                    style={{ backgroundColor: accent }}
+                  />
+                  {highlight}
+                </li>
+              ))}
+            </ul>
 
             <div className="mt-auto flex flex-wrap gap-1.5 pt-4">
               {project.technologies.slice(0, 3).map((tech) => (

@@ -9,6 +9,7 @@ export type Project = {
   technologies: string[];
   image: string;
   features: string[];
+  highlights: string[];
   problem: string;
   solution: string;
   challenges: string;
@@ -36,10 +37,15 @@ export const projects: Project[] = [
       "Delivery analytics",
       "Subscription management",
     ],
+    highlights: [
+      "Direct integration with local Tanzanian SMS gateways, with automatic retry on failed deliveries",
+      "Contacts can be segmented into groups and targeted with scheduled bulk campaigns",
+      "Delivery reports are tracked per campaign so businesses know exactly which messages arrived",
+    ],
     problem:
       "Local businesses struggled to stay connected with their customers. Existing communication tools were either too complex, built for large enterprises, or lacked the local integration needed for regional telecom providers. There was no simple way to manage customer records and send targeted SMS campaigns.",
     solution:
-      "KEMI-FAIBA is a straightforward web platform for managing customer records and running bulk SMS campaigns. A fast Next.js frontend sits on a reliable backend, letting businesses import contacts, segment them, schedule messages and track delivery — all in one place.",
+      "KEMI-FAIBA is a straightforward web platform for managing customer records and running bulk SMS campaigns. A fast Next.js frontend sits on a reliable backend, letting businesses import contacts, segment them, schedule messages and track delivery, all in one place.",
     challenges:
       "Integrating with local SMS gateways meant handling inconsistent delivery reports and building retry logic that worked reliably. Storing and querying large contact lists also needed careful data modelling with proper indexing and pagination.",
     result:
@@ -72,10 +78,15 @@ export const projects: Project[] = [
       "Airport details and route search",
       "Mobile-friendly responsive interface",
     ],
+    highlights: [
+      "Aircraft positions refresh continuously on an interactive Leaflet map without freezing the page",
+      "Data from multiple aviation sources is normalised into one fast, unified search",
+      "Works smoothly on phones and slow networks, not just desktop browsers",
+    ],
     problem:
       "Travellers and aviation enthusiasts lacked a simple, fast way to see live flight information and explore routes. Existing tools were slow, cluttered with ads, or buried key information behind complex interfaces.",
     solution:
-      "SKYMAP is a simple flight tracking and travel information platform. An interactive map shows live flights, while search lets users find flights, routes and airport details quickly — on any device.",
+      "SKYMAP is a simple flight tracking and travel information platform. An interactive map shows live flights, while search lets users find flights, routes and airport details quickly on any device.",
     challenges:
       "Handling high-frequency live updates without jank required efficient client-side state management and careful map rendering. Normalising data from multiple aviation sources into one fast search index was also demanding.",
     result:
@@ -108,8 +119,13 @@ export const projects: Project[] = [
       "SMS order confirmations",
       "Customer accounts",
     ],
+    highlights: [
+      "Customers can set up weekly or monthly recurring juice deliveries that renew automatically",
+      "Every order is confirmed over SMS, so customers without smartphones are never left out",
+      "The business owner manages the catalogue and sees incoming orders from one simple dashboard",
+    ],
     problem:
-      "A local juice business wanted to move beyond phone and walk-in orders. Customers needed a simple way to place orders and set up recurring deliveries, while the business needed to confirm orders reliably — even for customers without smartphones.",
+      "A local juice business wanted to move beyond phone and walk-in orders. Customers needed a simple way to place orders and set up recurring deliveries, while the business needed a reliable way to confirm orders, even for customers without smartphones.",
     solution:
       "SALASJUICE is an ordering platform with a clean product catalogue, recurring delivery plans and SMS order confirmations. Orders are confirmed over SMS, so every customer is reached wherever they are.",
     challenges:
@@ -143,6 +159,11 @@ export const projects: Project[] = [
       "Patient records and history",
       "Appointment reminders",
       "Clinic dashboard for staff",
+    ],
+    highlights: [
+      "Patients can find a doctor, book a slot and manage their records without calling the clinic",
+      "Automatic appointment reminders help clinics cut down on missed visits and long queues",
+      "Staff get a private dashboard with role-based access, keeping patient data protected",
     ],
     problem:
       "Clinics relied on walk-ins, phone calls and paper records, making it hard for patients to book appointments and for staff to manage daily schedules. Long queues and missed appointments were common.",
