@@ -6,7 +6,8 @@ import { getProjects } from "@/lib/portfolio";
 
 export default async function SelectedWork() {
   const projects = await getProjects();
-  const featured = projects.slice(0, 3);
+  const featured = projects.filter((project) => project.featured);
+  const visible = featured.length > 0 ? featured : projects.slice(0, 6);
 
   return (
     <section className="px-4 py-20 md:px-6">
@@ -29,13 +30,13 @@ export default async function SelectedWork() {
         </Reveal>
 
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {featured.map((project, i) => (
+          {visible.map((project, i) => (
             <ProjectCard
               key={project.slug}
               project={project}
               index={i}
               accent={categoryColor(project.category)}
-              featured={i === 0}
+              featured={project.featured}
             />
           ))}
         </div>

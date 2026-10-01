@@ -49,7 +49,7 @@ export default async function Experience() {
                   </span>
                 </div>
                 <div>
-                  <h3 className="font-display text-xl font-bold tracking-tight">
+                  <h3 className="font-display text-base font-semibold tracking-tight">
                     {entry.title}
                   </h3>
                   {entry.organization ? (
