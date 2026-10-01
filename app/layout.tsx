@@ -70,10 +70,6 @@ export const metadata: Metadata = {
     description: site.metaDescription,
     images: ["/opengraph-image"],
   },
-  icons: {
-    icon: "/icon.svg",
-    apple: "/apple-icon",
-  },
   alternates: {
     canonical: site.url,
   },
