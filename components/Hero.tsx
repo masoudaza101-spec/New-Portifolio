@@ -8,7 +8,7 @@ import {
 import Reveal from "@/components/Reveal";
 import AnimatedBackground from "@/components/AnimatedBackground";
 import Typewriter from "@/components/Typewriter";
-import TerminalCard from "@/components/TerminalCard";
+import ProfileCard from "@/components/ProfileCard";
 import SocialLinkIcon from "@/components/SocialLinkIcon";
 import { site } from "@/data/site";
 import { getProjects, getSocialLinks } from "@/lib/portfolio";
@@ -163,9 +163,9 @@ export default async function Hero() {
             </Reveal>
           </div>
 
-          {/* Terminal column */}
+          {/* Profile photo column */}
           <Reveal delay={0.1}>
-            <TerminalCard projectsCount={projects.length} />
+            <ProfileCard />
           </Reveal>
         </div>
       </div>
