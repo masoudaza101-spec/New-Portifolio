@@ -30,7 +30,7 @@ export const projects: Project[] = [
     year: "2026",
     role: "Full-Stack Developer",
     technologies: ["Next.js", "TypeScript", "Prisma", "TiDB", "SMS API"],
-    image: "/images/kemi-faiba.jpg",
+    image: "/images/projects/kemi-faiba.jpg",
     features: [
       "Customer management",
       "SMS campaign builder",
@@ -71,7 +71,7 @@ export const projects: Project[] = [
     year: "2026",
     role: "Full-Stack Developer",
     technologies: ["Next.js", "TypeScript", "Leaflet", "REST APIs"],
-    image: "/images/afya-lead.jpg",
+    image: "/images/projects/skymap.jpg",
     features: [
       "Live flight tracking on an interactive map",
       "Search flights by route, airline or airport",
@@ -112,7 +112,7 @@ export const projects: Project[] = [
     year: "2024",
     role: "Full-Stack Developer",
     technologies: ["Next.js", "TypeScript", "Prisma", "SMS Integration"],
-    image: "/images/salas.jpg",
+    image: "/images/projects/salasjuice.jpg",
     features: [
       "Product catalogue",
       "Order management",
@@ -153,7 +153,7 @@ export const projects: Project[] = [
     year: "2025",
     role: "Full-Stack Developer",
     technologies: ["Next.js", "TypeScript", "Prisma", "PostgreSQL"],
-    image: "/images/childcare.jpg",
+    image: "/images/projects/doctor-portal.jpg",
     features: [
       "Online appointment booking",
       "Doctor and clinic profiles",
@@ -194,7 +194,7 @@ export const projects: Project[] = [
     year: "2025",
     role: "Full-Stack Developer",
     technologies: ["Next.js", "TypeScript", "Prisma", "PostgreSQL"],
-    image: "/images/projects/department-management.svg",
+    image: "/images/projects/department-management.jpg",
     featured: true,
     features: [
       "Department and faculty directory",
@@ -236,7 +236,7 @@ export const projects: Project[] = [
     year: "2025",
     role: "Full-Stack Developer",
     technologies: ["Node.js", "TypeScript", "SMS API", "PostgreSQL"],
-    image: "/images/projects/udom-sms-reminder.svg",
+    image: "/images/projects/udom-sms-reminder.jpg",
     featured: true,
     features: [
       "Scheduled reminder campaigns",
@@ -279,7 +279,7 @@ export const projects: Project[] = [
     year: "2025",
     role: "Full-Stack Developer",
     technologies: ["Next.js", "TypeScript", "Prisma", "MySQL"],
-    image: "/images/projects/student-management.svg",
+    image: "/images/projects/student-management.jpg",
     featured: true,
     features: [
       "Student registration and profiles",
@@ -322,7 +322,7 @@ export const projects: Project[] = [
     year: "2024",
     role: "Full-Stack Developer",
     technologies: ["Next.js", "TypeScript", "Prisma", "PostgreSQL"],
-    image: "/images/projects/beba-chap.svg",
+    image: "/images/projects/beba-chap.jpg",
     featured: true,
     features: [
       "Group and member management",
@@ -365,7 +365,7 @@ export const projects: Project[] = [
     year: "2025",
     role: "Full-Stack Developer",
     technologies: ["Android", "Java", "Firebase", "REST API"],
-    image: "/images/projects/trackmauzo.svg",
+    image: "/images/projects/trackmauzo.jpg",
     featured: true,
     features: [
       "Payment entry with instant confirmation",
@@ -408,7 +408,7 @@ export const projects: Project[] = [
     year: "2026",
     role: "Full-Stack Developer",
     technologies: ["Next.js", "TypeScript", "PostgreSQL", "REST API"],
-    image: "/images/projects/afyalink.svg",
+    image: "/images/projects/afyalink.jpg",
     featured: true,
     features: [
       "Central patient record and history",
